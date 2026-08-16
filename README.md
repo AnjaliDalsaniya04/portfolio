@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Anjali Dalsaniya — Developer Portfolio
+
+A responsive single-page portfolio website built with Next.js and Tailwind CSS,
+showcasing my experience, projects, skills, education and certifications as a
+backend developer.
+
+**Live site:** _coming soon_
+
+---
+
+## Tech Stack
+
+| Layer      | Technology                            |
+| ---------- | ------------------------------------- |
+| Framework  | Next.js 16 (App Router)               |
+| UI         | React 19                              |
+| Styling    | Tailwind CSS v4                       |
+| Icons      | react-icons, devicon CDN              |
+| Form       | Web3Forms (no backend required)       |
+| Deployment | Vercel                                |
+
+## Features
+
+- **Single page, no routing** — every section is an anchor on one route
+- **Fully responsive** — mobile-first layout down to 320px
+- **Sticky section blocks** — the heading and illustration stay pinned beside the
+  cards on the Experience, Education and Certifications sections
+- **Working contact form** — submissions are delivered straight to my inbox via
+  Web3Forms, with a spam honeypot and inline success/error states
+- **No animation libraries** — all motion is plain CSS keyframes, and it honours
+  `prefers-reduced-motion`
+- **Themed with CSS custom properties** — colours live in one `@theme` block
+
+## Sections
+
+`Hero` · `About` · `Experience` · `Skills` · `Projects` · `Education` ·
+`Certifications` · `Contact`
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# install dependencies
+npm install
+
+# run the dev server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Environment variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The contact form needs a free [Web3Forms](https://web3forms.com) access key.
+Copy the template and fill it in:
 
-## Learn More
+```bash
+cp .env.example .env.local
+```
 
-To learn more about Next.js, take a look at the following resources:
+```env
+NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY=your-key-here
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Without a key the form falls back to opening the visitor's mail client, so the
+site still runs — it just won't deliver to the inbox directly.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
+```
+app/
+  components/       # one file per section, plus shared SectionHeading
+  data.js           # all content: bio, experience, projects, skills, education
+  globals.css       # Tailwind import, theme tokens, keyframes
+  layout.js         # fonts and metadata
+  page.js           # composes every section
+public/             # profile image and resume PDF
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+All content is in **`app/data.js`** — updating the site means editing that one
+file, not the components.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Build
+
+```bash
+npm run build
+npm start
+```
+
+## Contact
+
+- **Email:** anjalidalsaniya2212@gmail.com
+- **LinkedIn:** [anjali-dalsaniya](https://www.linkedin.com/in/anjali-dalsaniya-cte-gecbvn-it-68b917372/)
+- **GitHub:** [@AnjaliDalsaniya04](https://github.com/AnjaliDalsaniya04)
+- **LeetCode:** [Anjali_dalsaniya](https://leetcode.com/u/Anjali_dalsaniya)
