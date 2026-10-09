@@ -73,6 +73,15 @@ export const projects = [
     description:
       "A responsive movie browsing application built with React and Vite. Users can explore movies across categories and genres with reusable UI components and dynamic rendering.",
   },
+  {
+    id: 4,
+    name: "StoreRate – Store Rating Application",
+    role: "Full Stack Developer",
+    tools: ["React", "Node.js", "Express", "PostgreSQL", "JWT", "Prisma"],
+    code: "https://github.com/AnjaliDalsaniya04/store-rating",
+    description:
+      "A full-stack web application where users can browse and rate stores, store owners monitor ratings, and admins manage the platform. Features role-based access control for users, store owners and admins with JWT authentication.",
+  },
 ];
 
 // Two kinds of entry:
